@@ -2,7 +2,9 @@ const http = require('http');
 const homePage = require('./src/homePage.js');
 const enCartelera = require ('./src/enCartelera');
 const masVotadas = require ('./src/masVotadas');
-const masVotadas = require ('./src/su');
+const sucursales = require ('./src/sucursales');
+const contacto = require ('./src/contacto');
+const preguntas = require ('./src/preguntasFrecuentes');
 
 const ruta = {
  enrutador : (req,res) => {
@@ -19,9 +21,11 @@ const ruta = {
             case '/sucursales' :
                 res.end(sucursales);
                 break;    
-            case '/contacto': 
+            case '/contacto':
+                res.end(contacto); 
                 break;
             case '/preguntas-frecuentes' :
+                res.end(preguntas);
                 break;              
             default :
                 res.end ('No existe la seccion ingresada');    

@@ -9,6 +9,8 @@ iii. Descripción​ (descripción de la sala) */
 
 const contenido = require ('./index');
 
-let respuesta = `Nuestras Salas\n\n\n${contenido.theaters.total_theaters}`;
+let respuesta = `Nuestras Salas\n\n\nTotal de Salas: ${contenido.theaters.theaters.map((s) => s.total_rooms).reduce((acum,m) => acum +m ,0)}`;
+
+respuesta += 'Salas:\n\n\n'+ contenido.theaters.theaters.map((s) => s.name +'\nDirección: '+ s.address +'\n'+ s.description + '\n\n').join('');
 
 module.exports = respuesta;
